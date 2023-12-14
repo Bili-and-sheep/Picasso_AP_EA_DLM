@@ -1,63 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
-
-    <title>A propos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informations pratiques</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ajoutez des styles personnalisés ici si nécessaire */
+    </style>
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="./index.html">Accueil</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./oeuvres.html">Les oeuvres</a>
+                        <a class="nav-link" href="./oeuvres.html">Les œuvres</a>
                     </li>
                     <li class="nav-item">
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./apropo.html">A propos de Picasso</a>
-                                </li>
-                                <li class="nav-item">
-
-
-                            </ul>
-                        </div>
+                        <a class="nav-link" href="./apropo.html">À propos de Picasso</a>
+                    </li>
                     <li class="nav-item">
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./info.html">Infomation pratique</a>
-                                </li>
-                                <li class="nav-item">
-
-
-                            </ul>
-                        </div>
+                        <a class="nav-link" href="./info.html">Information pratique</a>
+                    </li>
                     <li class="nav-item">
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./tarif.html">Tarif</a>
-                                </li>
-                                <li class="nav-item">
-
-
-                            </ul>
-                        </div>
+                        <a class="nav-link" href="./tarif.html">Tarif</a>
+                    </li>
+                </ul>
             </div>
+        </div>
     </nav>
 
+    <div class="container mt-5">
+
+        <!-- Titre de la page -->
+        <h2 class="mb-4">Informations pratiques</h2>
+
+        <!-- Adresse de l'exposition -->
+        <p><strong>Adresse :</strong> Nom du Musée d'Animation, Rue de l'Exposition, Ville</p>
+
+        <!-- Plan OpenStreetMap intégré -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+            <iframe class="embed-responsive-item"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=6.127321422100067%2C45.89374747244715%2C6.12976759672165%2C45.895408894043165&amp;layer=mapnik"></iframe>
+        </div>
+
+        <!-- Horaires d'ouverture -->
+        <div class="mt-4">
+            <h4>Horaires d'ouverture :</h4>
+            <p><strong>Mardi à vendredi :</strong> 10h00 - 12h00 et 14h00 - 18h30</p>
+            <p><strong>Samedi et dimanche :</strong> 10h00 - 19h00</p>
+        </div>
+
+    </div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
 
 </html>
