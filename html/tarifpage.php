@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./tarifpage.php">Tarif</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Commande.html">Commande</a>
+                    </li>
                 </ul>
             </div>
         </div>
