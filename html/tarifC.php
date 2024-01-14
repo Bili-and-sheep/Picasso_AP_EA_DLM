@@ -64,9 +64,32 @@ $conn->close();
 
 <body>
 
-    <!-- Menu de navigation (copiez celui que vous avez déjà) -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- ... -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Accueil</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./oeuvres.html">Les œuvres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./apropo.html">À propos de Picasso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./info.html">Information pratique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./tarifpage.php">Tarif</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./commande.html">Commande</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div class="container mt-5">
