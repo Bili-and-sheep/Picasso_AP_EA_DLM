@@ -31,7 +31,7 @@
                         <a class="nav-link" href="./info.html">Information pratique</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./tarif.html">Tarif</a>
+                        <a class="nav-link" href="./tarifpage.php">Tarif</a>
                     </li>
                 </ul>
             </div>
@@ -40,40 +40,9 @@
 
     <div class="container mt-5">
 
-        <!-- Titre de la page -->
         <h2 class="mb-4">Tarifs</h2>
 
-        <!-- Tableau des tarifs -->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Catégories</th>
-                    <th>Prix</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Normal</td>
-                    <td>32€</td>
-                </tr>
-                <tr>
-                    <td>Tarif réduit (enfants entre 12 et 18, séniors de plus de 65 ans)</td>
-                    <td>24€</td>
-                </tr>
-                <tr>
-                    <td>Tarif étudiant, demandeurs d’emploi</td>
-                    <td>20€</td>
-                </tr>
-                <tr>
-                    <td>Tarif membre de l’association du festival international d’animation d’Annecy</td>
-                    <td>12€</td>
-                </tr>
-                <tr>
-                    <td>Tarif -12 ans</td>
-                    <td>5€</td>
-                </tr>
-            </tbody>
-        </table>
+        <?php include("tarif.php"); ?>
 
     </div>
 
