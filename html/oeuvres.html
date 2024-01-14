@@ -13,29 +13,9 @@
 
 <body>
 
+    <!-- Menu de navigation (copiez celui que vous avez déjà) -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">Accueil</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./oeuvres.html">Les œuvres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./apropo.html">À propos de Picasso</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./info.html">Information pratique</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tarif.html">Tarif</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <!-- ... -->
     </nav>
 
     <div class="container mt-5">
@@ -43,85 +23,67 @@
         <!-- Titre de la page -->
         <h2 class="mb-4">Les œuvres</h2>
 
-        <!-- Liste des œuvres avec des liens vers Wikipedia ou autre site -->
-        <div class="row">
-
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <img src="oeuvre1.jpg" class="card-img-top img-fluid" alt="Œuvre">
-                    <div class="card-body">
-                        <h5 class="card-title">Œuvre </h5>
-                        <p class="card-text">Description de l'œuvre.</p>
-                        <a href="lien_wikipedia_oeuvre1" class="btn btn-primary" target="_blank">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <img src="oeuvre2.jpg" class="card-img-top img-fluid" alt="Œuvre">
-                    <div class="card-body">
-                        <h5 class="card-title">Œuvre </h5>
-                        <p class="card-text">Description de l'œuvre.</p>
-                        <a href="lien_wikipedia_oeuvre2" class="btn btn-primary" target="_blank">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <img src="oeuvre2.jpg" class="card-img-top img-fluid" alt="Œuvre">
-                    <div class="card-body">
-                        <h5 class="card-title">Œuvre </h5>
-                        <p class="card-text">Description de l'œuvre.</p>
-                        <a href="lien_wikipedia_oeuvre2" class="btn btn-primary" target="_blank">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <img src="oeuvre2.jpg" class="card-img-top img-fluid" alt="Œuvre">
-                    <div class="card-body">
-                        <h5 class="card-title">Œuvre </h5>
-                        <p class="card-text">Description de l'œuvre.</p>
-                        <a href="lien_wikipedia_oeuvre2" class="btn btn-primary" target="_blank">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <img src="oeuvre2.jpg" class="card-img-top img-fluid" alt="Œuvre">
-                    <div class="card-body">
-                        <h5 class="card-title">Œuvre </h5>
-                        <p class="card-text">Description de l'œuvre.</p>
-                        <a href="lien_wikipedia_oeuvre2" class="btn btn-primary" target="_blank">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <img src="oeuvre2.jpg" class="card-img-top img-fluid" alt="Œuvre">
-                    <div class="card-body">
-                        <h5 class="card-title">Œuvre </h5>
-                        <p class="card-text">Description de l'œuvre.</p>
-                        <a href="lien_wikipedia_oeuvre2" class="btn btn-primary" target="_blank">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ajoutez plus de cartes pour chaque œuvre -->
-
-        </div>
+        <!-- Conteneur pour les œuvres -->
+        <div id="oeuvres-container" class="row"></div>
 
     </div>
 
-    <!-- Scripts Bootstrap -->
+    <!-- Scripts Bootstrap et JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Fonction pour obtenir un ordre aléatoire des indices d'images
+        function getRandomOrder(length) {
+            var order = Array.from({ length: length }, (_, i) => i);
+            return order.sort(() => Math.random() - 0.5);
+        }
+
+        // Fonction pour générer le code HTML pour une image avec un ordre aléatoire
+        function get_random_image(index, images, order) {
+            var imageIndex = order[index];
+            var imagePath = images[imageIndex];
+
+            var imageHTML = `
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <img src="${imagePath}" class="card-img-top img-fluid" alt="Œuvre ${imageIndex + 1}">
+            <div class="card-body">
+              <h5 class="card-title">Œuvre ${imageIndex + 1}</h5>
+              <p class="card-text">Description de l'œuvre ${imageIndex + 1}.</p>
+              <a href="lien_wikipedia_oeuvre${imageIndex + 1}" class="btn btn-primary" target="_blank">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+            return imageHTML;
+        }
+
+        // Récupérer le conteneur des œuvres
+        var oeuvresContainer = document.getElementById("oeuvres-container");
+
+        // Liste des noms d'images
+        var images = [
+            "../IMG/Femme-asise.jpeg",
+            "../IMG/Jeune-fille-devant-un-miroir.jpg",
+            "../IMG/La-femme-à-la-fleur.jpeg",
+            "../IMG/La-femme-qui-pleure.jpeg",
+            "../IMG/Le-Baiser.jpg",
+            "../IMG/Le-reve.jpg",
+            "../IMG/Le-vieux-guitariste-aveugle.jpg",
+            "../IMG/Les-Demoiselles-d-Avignon.jpg",
+            "../IMG/Nude-in-red-armchair.jpg"
+        ];
+        // Obtenir un ordre aléatoire des indices d'images
+        var randomOrder = getRandomOrder(images.length);
+
+        // Générer et ajouter les images au conteneur
+        for (var i = 0; i < 9; i++) {
+            oeuvresContainer.innerHTML += get_random_image(i, images, randomOrder);
+        }
+    </script>
 
 </body>
 
